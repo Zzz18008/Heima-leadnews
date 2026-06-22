@@ -1,0 +1,7 @@
+# MinIO 配置
+minio:
+  endpoint: http://127.0.0.1:9000
+  accessKey: minioadmin
+  secretKey: minioadmin
+  bucket: leadnews
+  readPath: http://127.0.0.1:9000

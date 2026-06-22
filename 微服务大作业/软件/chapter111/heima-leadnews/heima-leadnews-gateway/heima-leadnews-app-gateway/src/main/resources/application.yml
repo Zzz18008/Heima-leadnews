@@ -1,0 +1,47 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        # 用户端API路由 - 转发到用户服务
+        - id: user-service
+          uri: lb://leadnews-user
+          predicates:
+            - Path=/user/**  # 修正：Nginx已经去掉了/app前缀
+          filters:
+            - StripPrefix=1  # 修正：只去掉/user一层前缀
+
+        # 文章服务路由
+        - id: article-service
+          uri: lb://leadnews-article
+          predicates:
+            - Path=/article/**  # 修正
+          filters:
+            - StripPrefix=1  # 修正
+
+        # 搜索服务路由
+        - id: search-service
+          uri: lb://leadnews-search
+          predicates:
+            - Path=/search/**  # 修正
+          filters:
+            - StripPrefix=1  # 修正
+
+        # 行为服务路由
+        - id: behavior-service
+          uri: lb://leadnews-behavior
+          predicates:
+            - Path=/behavior/**  # 修正
+          filters:
+            - StripPrefix=1  # 修正
+
+        # 评论服务路由
+        - id: comment-service
+          uri: lb://leadnews-comment
+          predicates:
+            - Path=/comment/**  # 修正
+          filters:
+            - StripPrefix=1  # 修正
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG

@@ -1,0 +1,28 @@
+# 用户服务配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/leadnews_user?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: root
+  # MyBatis Plus 配置
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.heima.model.user.pojos
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      
+# JWT配置
+jwt:
+  secret: heima-leadnews-jwt-secret-key-for-user-authentication-2024
+  expiration: 86400000  # 24小时,单位毫秒
+
+# 日志配置
+logging:
+  level:
+    com.heima.user: DEBUG
+    com.baomidou.mybatisplus: DEBUG

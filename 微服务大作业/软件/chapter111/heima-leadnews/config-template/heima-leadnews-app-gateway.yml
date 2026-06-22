@@ -1,0 +1,54 @@
+# Spring Cloud Gateway 路由配置
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true  # 开启服务发现
+          lower-case-service-id: true  # 使用小写服务ID
+      routes:
+        # 用户端API路由 - 转发到用户服务
+        - id: user-service
+          uri: lb://leadnews-user  # 负载均衡到 leadnews-user 服务
+          predicates:
+            - Path=/app/v1/user/**  # 匹配 /app/v1/user/* 路径
+          filters:
+            - StripPrefix=1  # 去掉 /app 前缀
+        
+        # 文章服务路由
+        - id: article-service
+          uri: lb://leadnews-article
+          predicates:
+            - Path=/app/v1/article/**
+          filters:
+            - StripPrefix=1
+            
+        # 搜索服务路由
+        - id: search-service
+          uri: lb://leadnews-search
+          predicates:
+            - Path=/app/v1/search/**
+          filters:
+            - StripPrefix=1
+            
+        # 行为服务路由
+        - id: behavior-service
+          uri: lb://leadnews-behavior
+          predicates:
+            - Path=/app/v1/behavior/**
+          filters:
+            - StripPrefix=1
+            
+        # 评论服务路由
+        - id: comment-service
+          uri: lb://leadnews-comment
+          predicates:
+            - Path=/app/v1/comment/**
+          filters:
+            - StripPrefix=1
+
+# 日志配置
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty.http.client: DEBUG

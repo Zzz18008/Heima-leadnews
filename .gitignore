@@ -1,0 +1,51 @@
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# Java / Maven
+target/
+build/
+out/
+*.class
+*.log
+*.jar
+
+# Node / frontend caches
+node_modules/
+dist/
+.cache/
+
+# Temp / archives
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Local runtime data
+logs/
+*.pid
+
+# Bundled middleware and large release artifacts
+微服务大作业/mc
+微服务大作业/软件/nginx-1.30.2/
+微服务大作业/软件/seata/
+微服务大作业/软件/Zipkin/
+微服务大作业/软件/sentinel-dashboard-2.0.0-alpha-preview.jar
+
+# Frontend compiled bundles and source maps
+*.bundle.js
+*.bundle.map
+*.js.map
+微服务大作业/软件/wemedia-web/**/*.map
+微服务大作业/软件/app-web/**/*.map
+
+# macOS clipping artifacts
+*.textClipping
+
+# Keep source, SQL, docs, and submission materials under version control.
