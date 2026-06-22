@@ -17,9 +17,9 @@
 ## 2. 项目结构
 
 ```text
-SpringCloud微服务实训/
+黑马头条/
 ├── README.md
-├── 微服务大作业/
+├── 黑马头条/
 │   ├── 数据库/
 │   └── 软件/
 │       ├── app-web/
@@ -36,7 +36,7 @@ SpringCloud微服务实训/
 
 后端核心工程目录：
 
-- `微服务大作业/软件/chapter111/heima-leadnews`
+- `黑马头条/软件/chapter111/heima-leadnews`
 
 后端主要模块：
 
@@ -48,8 +48,8 @@ SpringCloud微服务实训/
 
 前端目录：
 
-- 用户端：`微服务大作业/软件/app-web`
-- 自媒体端：`微服务大作业/软件/wemedia-web/wemedia-web`
+- 用户端：`黑马头条/软件/app-web`
+- 自媒体端：`黑马头条/软件/wemedia-web/wemedia-web`
 
 ## 4. 运行环境
 
@@ -63,9 +63,9 @@ SpringCloud微服务实训/
 
 项目现有数据库脚本：
 
-- `微服务大作业/数据库/leadnews_user.sql`
-- `微服务大作业/数据库/leadnews_article.sql`
-- `微服务大作业/数据库/leadnews_wemedia.sql`
+- `黑马头条/数据库/leadnews_user.sql`
+- `黑马头条/数据库/leadnews_article.sql`
+- `黑马头条/数据库/leadnews_wemedia.sql`
 
 也可直接使用整理后的统一脚本：
 
@@ -94,7 +94,7 @@ mysql -uroot -p < "提交材料/数据库文件/all-init.sql"
 进入目录：
 
 ```bash
-cd "微服务大作业/软件/chapter111/heima-leadnews"
+cd "黑马头条/软件/chapter111/heima-leadnews"
 ```
 
 打包：
@@ -113,8 +113,8 @@ mvn clean package -DskipTests
 
 ### 6.4 前端访问
 
-- 用户端入口：`微服务大作业/软件/app-web/index.html`
-- 自媒体端入口：`微服务大作业/软件/wemedia-web/wemedia-web/index.html`
+- 用户端入口：`黑马头条/软件/app-web/index.html`
+- 自媒体端入口：`黑马头条/软件/wemedia-web/wemedia-web/index.html`
 
 可通过 Nginx 或本地静态服务器部署。
 
